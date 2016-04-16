@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Cardo:400,400italic,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body ng-app="Folio" ng-controller="MenuController" layout="row" ng-cloak="">
+  <!--
+    Your HTML content here
+  -->
+  <md-sidenav
+    class="md-whiteframe-4dp md-sidenav-left bg1"
+    md-is-locked-open="$mdMedia('gt-sm')"
+    md-component-id="left">
+    <md-list
+      flex role="navigation"
+      class="flex"
+      layout="column"
+      layout-align="start center">
+      <md-list-item class="avatar">
+        <md-button ng-disabled="true" aria-label="me">
+          <!-- <md-icon md-svg-icon="{{u.avatar}}" class="avatar"></md-icon> -->
+          <img src="img/hedshot.jpg">
+        </md-button>
+      </md-list-item>
+      <md-list-item>
+        <md-button ui-sref='home' ng-click="leftMenu()" class="btn1">
+          <md-icon md-svg-icon="home" aria-label="home"></md-icon>
+            Home
+        </md-button>
+      </md-list-item>
+      <md-list-item>
+        <md-button ui-sref='about' ng-click="leftMenu()" class="btn1">
+          <md-icon md-svg-icon="about" aria-label="contact"></md-icon>
+          about
+        </md-button>
+      </md-list-item>
+      <md-list-item>
+        <md-button ui-sref='contact' ng-click="leftMenu()" class="btn1">
+          <md-icon md-svg-icon="contact" aria-label="contact"></md-icon>
+          contact
+        </md-button>
+      </md-list-item>
+    </md-list>
+  </md-sidenav>
+
+  <div class="container layout-column flex" layout="column">
+  <md-toolbar class="md-whiteframe-glow-z1" layout="row" layout-align="start end">
+      <h1 class="md-display-2">db</h1>
+      <p class="md-subhead">web dev</p>
+      <span flex></span>
+      <md-button class="md-whiteframe-2dp hide-gt-sm btn0" ng-click="leftMenu()">
+        <!-- <md-icon md-svg-icon="{{u.avatar}}" class="avatar"></md-icon> -->
+        <md-icon md-svg-icon="left" aria-label="open menu"></md-icon>
+      </md-button>
+  </md-toolbar>
+  <md-content id="content" flex>
+    <div ui-view></div>
+  </md-content>
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+  <script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.min.js"></script>
+
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+
+  <!-- Your application bootstrap  -->
+  <script>
+      var app = angular.module('Folio', ['ui.router', 'ngMaterial']);
+      // For Component users, it should look like this:
+      // var myApp = angular.module('myApp', [require('angular-ui-router')]);
+      app.config(function($stateProvider, $urlRouterProvider, $mdIconProvider) {
+      //
+      // For any unmatched url, redirect to /state1
+        $urlRouterProvider.otherwise('/home');
+        //
+        // Now set up the states
+        $stateProvider.
+          state('home', {
+            url: '/home',
+            templateUrl: 'partials/home.html'
+          }).
+          state('about', {
+            url: '/about',
+            templateUrl: 'partials/about.html',
+            controller: 'TabsController'
+          }).
+          state('contact', {
+            url: '/contact',
+            templateUrl: 'partials/contact.html'
+          })
+
+        $mdIconProvider
+          .icon('home', 'img/svg/home.svg')
+          .icon('about', 'img/svg/devbrace.svg')
+          .icon('contact', 'img/svg/contact.svg')
+          .icon('html', 'img/svg/html5.svg')
+          .icon('css', 'img/svg/css3.svg')
+          .icon('js', 'img/svg/js.svg')
+          .icon('email', 'img/svg/email.svg')
+          .icon('cell', 'img/svg/cell.svg')
+          .icon('link', 'img/svg/link.svg')
+          .icon('left', 'img/svg/left.svg')
+          .icon('angular', 'img/svg/angular.svg')
+          .icon('rails', 'img/svg/rails.svg')
+          .icon('wp', 'img/svg/wp.svg');
+
+        })
+        .run(function($http, $templateCache){
+            // Pre-fetch icons sources by URL and cache in the $templateCache...
+            // subsequent $http calls will look there first.
+            var urls = [ 'img/svg/home.svg', 'img/svg/devbrace.svg', 'img/svg/contact.svg'];
+            angular.forEach(urls, function(url) {
+              $http.get(url, {cache: $templateCache});
+            });
+        });
+
+        app.controller('MenuController', function($scope, $mdSidenav){
+
+          $scope.leftMenu = function() {
+            $mdSidenav('left').toggle();
+          };
+
+        });
+        app.controller('TabsController', function($scope){
+
+          $scope.info = [
+            {
+              name: 's_nth',
+              description: 'Built a mono-synth with the robust Web Audio Api. A javascript programming interface completely centered around sound, the web audio api allowed me to take a simple saw wave and blow it up into a virtual instrument.',
+              status: 'building v2',
+              site: 'http://dmbarrett.github.io/s_nth',
+              github: 'http://github.com/dmbarrett/s_nth',
+            },
+            {
+              name: 'jrvr',
+              description: 'A site built for a friend who develops for Virtual Reality! Built with aframe.io this app becomes a window to a 3d world filled with pizza and all sorts of suprises.',
+              status: 'in progress',
+              site: 'http://virtualreality.pizza',
+              github: 'http://github.com/dmbarrett/'
+            },
+            {
+              name: 'my portfolio',
+              description: 'This site is built with angular and angular material, and going forward I intend to to stick to the design patterns that material design offers.',
+              status: 'v2 complete',
+              site: 'http://danielbarrett.co',
+              github: 'http://github.com/dmbarrett'
+            }
+          ]
+
+        });
+  </script>
+</body>
+
+</html>

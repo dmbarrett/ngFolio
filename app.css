@@ -1,0 +1,266 @@
+html, body {
+  font-size:14px;
+  height:100%;
+  margin:0;
+  padding:0;
+}
+h1, h3, p {
+  color: #555555;
+}
+h1, h3 {
+  letter-spacing: -1px;
+  font-family: 'Montserrat', sans-serif;
+}
+h3 {
+  letter-spacing:2px;
+}
+p{
+  font-family: 'Cardo', serif;
+}
+md-toolbar {
+  min-height:60px;
+  max-height: 60px;
+  padding-left:5px;
+  background-color:#006064 !important ;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+md-toolbar h1, md-toolbar p {
+  line-height: 44px !important;
+  margin:0;
+  color: #ffffff;
+}
+md-toolbar p {
+  line-height: 24px !important;
+}
+md-list-item{
+  width:100%;
+  text-align:left !important;
+}
+md-list-item .btn1 {
+  color: #555555;
+  padding: 10px;
+  margin: 0;
+  min-width: 100%;
+  border-radius: 0;
+  font-size: 20px;
+  text-align: center;
+  text-transform:capitalize;
+  text-decoration:none;
+  letter-spacing: 1px;
+  border: none;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.avatar {
+  width:auto;
+}
+img {
+  postion: relative;
+  width: 256px;
+  height: 256px;
+  border: 5px solid #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  overflow: hidden;
+  margin:0;
+  vertical-align:middle;
+  zoom:0.70;
+  transform: translateZ(0);
+  -webkit-transform: scale(0.70);
+  -moz-transform: scale(0.70);
+}
+
+md-grid-list {
+  padding: 0;
+  margin:0;}
+.gray {
+  background: #f5f5f5; }
+.green {
+  background: #c5e1a5;
+  background: url('https://inkslcc.files.wordpress.com/2014/03/designer-work-space_for_evaluation-paper.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.yellow {
+  /*background: #dcedc8;*/
+  background: url('http://www.bosleyniagara.com/wp-content/uploads/2015/02/1344312854-711-office.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.blue {
+  /*background: #aed581;*/
+  background: url('http://www.jeremythake.com/wp-content/uploads/2013/10/code001.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+ }
+.purple {
+  background: #b388ff; }
+.red {
+  background: #ff8a80; }
+md-grid-tile {
+  transition: all 400ms ease-out 50ms;
+ }
+md-grid-tile div {
+  display:block;
+}
+md-grid-tile h1 {
+  text-align: center;
+  padding:50px;
+}
+md-grid-tile div h3 {
+  text-align: center;
+  margin:0 !important;
+}
+md-grid-tile div p {
+  text-align: center;
+  padding: 0 50px;
+}
+md-card{
+  margin:25px;
+}
+md-card h1, p{
+  margin:0;
+}
+md-tabs {
+  border-radius: 5px;
+  margin:10px 0;
+}
+.aboutInfo {
+  padding: 25px 50px;
+}
+.workTnfo {
+  padding:0 25px;
+}
+.pInfo{
+  margin:10px auto;
+}
+a md-icon svg {
+  margin-top: -2px;
+  fill:#555555;
+}
+md-grid-tile md-icon {
+  margin:0;
+  height:100%;
+  width:100%;
+}
+md-content svg {
+  height: 100%;
+  width: 75%;
+  margin: 0 auto;
+}
+.pad {
+  padding:15%;
+}
+.grayVg path, polygon {
+  fill: #777777;
+  /*stroke: black;
+  stroke-width: 10px;*/
+}
+md-list-item md-icon svg{
+  height:24px;
+  width:24px;
+}
+md-list-item a {
+  display: -webkit-box;
+  text-decoration: none;
+  width: 100%;
+}
+a md-list-item-text{
+  margin:0 !important;
+  padding-left:32px !important;
+}
+.contactInfo {
+  padding: 25px 50px;
+}
+.contactInfo md-button {
+  width:100%;
+}
+.btn0 {
+  color: #555555;
+  margin: 8px;
+  height:48px;
+  width:48px !important;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+.btn0 md-icon {
+  height:36px;
+  width:36px;
+}
+.btn1 {
+  color: #555555;
+  padding: 10px;
+  margin: 0;
+  min-width: 100%;
+  border-radius: 0;
+  font-size: 20px;
+  text-align: center;
+  text-transform:capitalize;
+  text-decoration:none;
+  letter-spacing: 1px;
+  border: none;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+}
+.wrap1 {
+  height:100%;
+  width:100%;
+  background-color: rgba(220,237,200,0.8);
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center;
+}
+.wrap2 {
+  height:100%;
+  width:100%;
+  background-color: rgba(207,216,220,0.9);
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+}
+.contactInfo .btn2 md-icon {
+  height: 64px;
+  width: 64px;
+  padding: 0;
+  margin: 0;}
+.contactInfo .btn2 div h3 {
+  margin:0;
+}
+.contactInfo .btn2 div p {
+  margin:0;
+}
+.btn2 {
+  color: #555555;
+  padding: 10px;
+  margin: 0;
+  min-width: 100%;
+  border-radius: 0;
+  font-size: 20px;
+  text-transform:lowercase;
+  text-decoration:none;
+  letter-spacing: 1px;
+  border: none;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: row;
+
+}
+.btn2 div h3, .btn2 div p{
+  text-align: right;
+}
