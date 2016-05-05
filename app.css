@@ -62,8 +62,12 @@ md-toolbar {
     }
 
 /* link list */
+md-list {
+  max-height: 500px;
+}
 .navi md-list-item{
   width:100%;
+  margin: 10px auto;
   text-align:left !important;
 }
 .navi a md-icon svg {
@@ -72,6 +76,12 @@ md-toolbar {
   height:24px;
   width:24px;
 }
+.naviHead {
+  width:80% !important;
+  margin: 10px auto;
+  border-radius:10px;
+  background-color: #5555555 !important;
+}
   /* md-btn restyle */
   md-list-item .btn1 {
     color: #555555;
@@ -79,7 +89,7 @@ md-toolbar {
     margin: 0;
     min-width: 100%;
     border-radius: 0;
-    font-size: 20px;
+    font-size: 24px;
     text-align: center;
     text-transform:capitalize;
     text-decoration:none;
@@ -89,24 +99,33 @@ md-toolbar {
     font-family: 'Montserrat', sans-serif;
   }
 
+  md-list-item .name {
+    font-size: 34px;
+    text-align: center;
+    width: 100%;
+    padding:0;
+    margin:10px auto;
+    border-radius: 10px;
+    font-weight: 400;
+  }
   /* headshot */
   .avatar {
     width:100%;
   }
   img {
     postion: relative;
-    width: 256px;
-    height: 256px;
-    border: 5px solid #ddd;
+    width: 128px;
+    height: 128px;
+    border: 2px solid #ddd;
     border-radius: 50%;
     display: inline-block;
     overflow: hidden;
     margin:0;
     vertical-align:middle;
-    zoom:0.70;
+    /*zoom:0.70;
     transform: translateZ(0);
     -webkit-transform: scale(0.70);
-    -moz-transform: scale(0.70);
+    -moz-transform: scale(0.70);*/
   }
 
 
@@ -142,7 +161,6 @@ md-grid-list {
   /* main grid info */
   .mainGriddy {
     /*background: #dcedc8;*/
-    background: url('http://www.bosleyniagara.com/wp-content/uploads/2015/02/1344312854-711-office.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -152,7 +170,6 @@ md-grid-list {
   /* supporting grid info */
   .griddy1 {
     background: #c5e1a5;
-    background: url('https://inkslcc.files.wordpress.com/2014/03/designer-work-space_for_evaluation-paper.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -160,7 +177,6 @@ md-grid-list {
   }
   .griddy2 {
     /*background: #aed581;*/
-    background: url('http://www.jeremythake.com/wp-content/uploads/2013/10/code001.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -190,18 +206,24 @@ md-grid-list {
 
 /***** About Partial *****/
 
+
 /* ParaSnippPhrase */
 .aboutInfo {
   padding: 25px 50px;
+  padding-bottom: 50px;
 }
 
 /* Projects Display */
+md-card-actions a md-icon svg {
+  fill: #999999;
+}
 md-tabs {
   border-radius: 5px;
   margin:10px 0;
 }
   .workTnfo {
     padding:0 25px;
+    padding-bottom: 50px;
   }
   md-card{
     margin:25px;
@@ -225,7 +247,7 @@ md-tabs {
       padding:15%;
     }
     .grayVg path, polygon {
-      fill: #777777;
+      fill: #999999;
       /*stroke: black;
       stroke-width: 10px;*/
     }
@@ -265,10 +287,10 @@ md-tabs {
       margin: 0;
     }
       .contactInfo .btn2 md-icon svg{
-        fill:#555555;
+        fill:#999999;
       }
       .contactInfo .btn2 div p {
         margin:0;
         text-align: right;
-        padding-left: 24px !important;
+        padding-left: 12px !important;
       }

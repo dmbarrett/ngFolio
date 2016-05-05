@@ -1,19 +1,20 @@
-<div ng-cloak="">
-  <md-content class="aboutInfo">
+  <div class="aboutInfo">
     <h1 class="md-display-1">About Me</h1>
-    <p class="md-headline">Hey, as might already know I am a web developer. I code and design things for the web. I enjoy learning new frameworks, libraries and languages. My confidence in javascript exceeds all others. I use Angular to build modular front-end applications, and Rails to incorporate backend functionality if need be. For smaller projects I choose Wordpress to save time.</p><br>
-    <p class="md-headline">In addition to web development I have delved into mobile development a bit and have also taken a crack at unity, and have an iOS game in the works. I love to learn new things, in August I learn how to use music production software, so I guess you could call me a sound developer/ designer too.</p><br>
+    <p class="md-headline">Hello, I am a developer. I code and design websites and applications for the web. I enjoy learning new frameworks, libraries and languages. My confidence in javascript exceeds all others. I use Angular to build modular front-end applications, and Rails to incorporate backend functionality if need be. For smaller projects I choose Wordpress to save time.</p><br>
+    <p class="md-headline">In addition to web development, I have delved into mobile development using Ionic. A powerful solution for someone like me.</p><br>
+    <p class="md-headline">Also I love music and it fuels my creative side. I produce with Ableton Live 9 and design sound using plugins like Native Instruments: Massive.</p><br>
+    <p class="md-headline">Forever an athlete, I'm a soccer player and fan. No teams in particular, just the beautiful game. </p><br>
     <p class="md-headline">Life is fleeting and I just want to do some cool stuff.</p>
-  </md-content>
+  </div>
   <md-divider></md-divider>
-  <md-content class="aboutInfo">
+  <div class="aboutInfo">
     <h1 class="md-display-1">Work</h1>
     <p class="md-headline">I am currently freelancing and consulting, doing mostly front end development.</p><br>
     <p class="md-headline">While I enjoy the freedom and ability to make my own schedule, I plan on finishing out a few more projects and looking for full time work this coming summer.</p><br>
     <p class="md-headline">Here is a highlight of my projects...</p>
-  </md-content>
+  </div>
   <md-content class="workTnfo">
-    <md-tabs md-dynamic-height="" md-border-bottom="" class="gray">
+    <md-tabs md-dynamic-height="" md-border-bottom="" class="md-whiteframe-4dp">
       <md-tab ng-repeat="i in info" label="{{i.name}}">
         <!-- <md-content class="md-padding"> -->
           <md-card>
@@ -30,8 +31,8 @@
             <md-content>
             <md-divider></md-divider>
             <md-card-actions layout="row" layout-align="end center">
-              <md-button target="_blank" href="{{i.site}}" class="md-primary">  <md-icon md-svg-icon="link"></md-icon>Site</md-button>
-              <md-button target="_blank" href="{{i.github}}" class="md-primary">  <md-icon md-svg-icon="link"></md-icon>Github</md-button>
+              <md-button target="_blank" href="{{i.site}}" class="md-primary" ng-disabled="{{i.disabled}}">  <md-icon md-svg-icon="link" ></md-icon>Site</md-button>
+              <md-button target="_blank" href="{{i.github}}" class="md-primary" ng-disabled="{{i.disabled}}">  <md-icon md-svg-icon="link"></md-icon>Github</md-button>
             </md-card-actions>
 
           </md-content>
@@ -40,9 +41,8 @@
       </md-tab>
     </md-tabs>
   </md-content>
-</div>
 <md-divider></md-divider>
-<md-content class="aboutInfo">
+<div class="aboutInfo" ng-controller="SkillController">
 <h3 class="md-display-1">Skillset</h3>
 <md-grid-list
         md-cols="1" md-cols-sm="3" md-cols-md="3" md-cols-gt-md="3"
@@ -52,43 +52,8 @@
                   md-colspan="1"
                   md-colspan-sm="1"
                   md-colspan-xs="1"
-                  class="gray">
-      <md-icon md-svg-icon="html" class="pad grayVg" aria-label="html5" ng-disabled></md-icon>
-    </md-grid-tile>
-    <md-grid-tile md-rowspan="1"
-                  md-colspan="1"
-                  md-colspan-sm="1"
-                  md-colspan-xs="1"
-                  class="gray">
-      <md-icon md-svg-icon="css" class="pad grayVg" aria-label="css3" ng-disabled></md-icon>
-    </md-grid-tile>
-    <md-grid-tile md-rowspan="1"
-                  md-colspan="1"
-                  md-colspan-sm="1"
-                  md-colspan-xs="1"
-                  class="gray">
-      <md-icon md-svg-icon="js" class="pad grayVg" aria-label="javascript" ng-disabled></md-icon>
-    </md-grid-tile>
-    <md-grid-tile md-rowspan="1"
-                  md-colspan="1"
-                  md-colspan-sm="1"
-                  md-colspan-xs="1"
-                  class="gray">
-      <md-icon md-svg-icon="angular" class="pad grayVg" aria-label="angular" ng-disabled></md-icon>
-    </md-grid-tile>
-    <md-grid-tile md-rowspan="1"
-                  md-colspan="1"
-                  md-colspan-sm="1"
-                  md-colspan-xs="1"
-                  class="gray">
-      <md-icon md-svg-icon="rails" class="pad grayVg" aria-label="rails" ng-disabled></md-icon>
-    </md-grid-tile>
-    <md-grid-tile md-rowspan="1"
-                  md-colspan="1"
-                  md-colspan-sm="1"
-                  md-colspan-xs="1"
-                  class="gray">
-      <md-icon md-svg-icon="wp" class="pad grayVg" aria-label="wordpress" ng-disabled></md-icon>
+                  class="gray" ng-repeat="s in skills">
+      <md-icon md-svg-icon="{{s.icon}}" class="pad grayVg" aria-label="{{s.label}}" ng-disabled></md-icon>
     </md-grid-tile>
   </md-grid-list>
-</md-content>
+</div>

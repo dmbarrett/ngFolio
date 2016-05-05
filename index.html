@@ -21,11 +21,12 @@
       class="flex navi"
       layout="column"
       layout-align="start center">
-      <md-list-item>
+      <md-list-item class="md-whiteframe-6dp naviHead" layout="column">
         <md-button ng-disabled="true" aria-label="me" class="avatar">
           <!-- <md-icon md-svg-icon="{{u.avatar}}" class="avatar"></md-icon> -->
           <img src="img/hedshot.jpg">
         </md-button>
+        <h1 class="name">Daniel Barrett</h1>
       </md-list-item>
       <md-list-item>
         <md-button ui-sref='home' ng-click="leftMenu()" class="btn1">
@@ -131,7 +132,6 @@
 
         });
         app.controller('TabsController', function($scope){
-
           $scope.info = [
             {
               name: 's_nth',
@@ -153,9 +153,44 @@
               status: 'v2 complete',
               site: 'http://danielbarrett.co',
               github: 'http://github.com/dmbarrett'
+            },
+            {
+              name: 'pinstapic',
+              description: 'A mobile app built using the ionic framework. More details coming soon.',
+              status: 'discovery',
+              site: '',
+              github: '',
+              disabled: 'true'
             }
           ]
-
+        });
+        app.controller("SkillController", function($scope){
+            $scope.skills = [
+              {
+                icon: 'html',
+                label: 'html5'
+              },
+              {
+                icon: 'css',
+                label: 'css3'
+              },
+              {
+                icon: 'js',
+                label: 'javascript'
+              },
+              {
+                icon: 'angular',
+                label: 'angular 1'
+              },
+              {
+                icon: 'rails',
+                label: 'ruby on rails'
+              },
+              {
+                icon: 'wp',
+                label: 'wordpress'
+              }
+            ];
         });
   </script>
 </body>
